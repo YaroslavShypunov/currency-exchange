@@ -1,0 +1,64 @@
+@import 'variables'
+@import 'exchangeButtonComponent'
+$paddingSize: 40px
+
+.valure-container-component
+    height: calc(50vh - #{$paddingSize} * 2)
+    background: $bgColor
+    padding: $paddingSize
+    .currency-container
+        min-width: 300px
+        cursor: pointer
+        .arrow-icon
+            width: 4rem
+            height: 4rem
+            vertical-align: middle
+    .number-container
+        height: 96px
+        width: fit-content
+        width: -moz-fit-content
+        .disabledColor
+            color: $defaultColor
+        .input-number
+            height: 100%
+            border: none
+            font-size: 6rem
+            margin-left: 10px
+            &::after, &::before
+                border: none
+            &:focus, &:hover
+                &::after, &::before
+                    border: none
+            input
+                text-align: right
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button
+                -webkit-appearance: none
+                -moz-appearance: none
+                appearance: none
+                margin: 0
+@media only screen and (max-width: 1000px)
+    .valure-container-component
+        padding: $paddingSize calc(#{$paddingSize} / 4)
+        .currency-container
+            min-width: 120px
+            .arrow-icon
+                width: 40px
+                height: 40px
+        .number-container
+            height: 44px
+            .input-number
+                font-size: 40px
+@media only screen and (max-width: 400px)
+    .valure-container-component
+        .currency-container
+            min-width: 80px
+            .arrow-icon
+                width: 20px
+                height: 20px
+        .number-container
+            height: 22px
+            .input-number
+                font-size: 25px
+.exchange-currency
+    background: white
